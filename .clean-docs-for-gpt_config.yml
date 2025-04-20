@@ -1,0 +1,11 @@
+targets:
+  - repo_url: https://github.com/home-assistant/home-assistant.io
+    include:
+      - source/_docs/*
+      - source/_data/glossary.yml
+    exclude: []
+    extensions:
+      - .md
+      - .markdown
+      - .yaml
+      - .yml
