@@ -1,10 +1,22 @@
-name: Clean Docs via reusable workflow
+name: Run cleaning via composite action
 
 on:
   workflow_dispatch:
 
 jobs:
-  call-cleaner:
-    uses: e1970180/clean-docs-for-gpt/.github/workflows/reusable-cleaner.yml@main
-    with:
-      config_path: .clean-docs-for-gpt_config.yml
+  clean-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout docs repository
+        uses: actions/checkout@v4
+
+      - name: Checkout clean-docs-for-gpt actions
+        uses: actions/checkout@v4
+        with:
+          repository: e1970180/clean-docs-for-gpt
+          path: clean-docs-for-gpt
+
+      - name: Clean documentation
+        uses: ./clean-docs-for-gpt/.github/actions/clean-docs
+        with:
+          config_path: .clean-docs-for-gpt_config.yml
