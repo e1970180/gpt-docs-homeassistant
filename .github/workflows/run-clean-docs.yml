@@ -30,7 +30,7 @@ jobs:
 
       - name: Run cleaner from clean-docs-for-gpt
         run: |
-          python .external-tools/clean-docs-for-gpt/scripts/clean_markdown.py .clean-docs-for-gpt_config.yml
+          python ~/tools-clean-docs/scripts/clean_markdown.py .clean-docs-for-gpt_config.yml
       - name: Commit results
         run: |
           git config --global user.name "github-actions[bot]"
