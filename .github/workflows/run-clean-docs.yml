@@ -2,6 +2,9 @@ name: Run Clean Docs from External Repo
 
 on:
   workflow_dispatch:
+  
+permissions:
+  contents: write
 
 jobs:
   run-cleaner:
