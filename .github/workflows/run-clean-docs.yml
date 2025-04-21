@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: e1970180/clean-docs-for-gpt
-          path: ../clean-docs-for-gpt
+          path: .external-tools/clean-docs-for-gpt
 
       - name: Set up Python
         uses: actions/setup-python@v5
